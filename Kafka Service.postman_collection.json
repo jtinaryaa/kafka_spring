@@ -1,0 +1,29 @@
+{
+	"info": {
+		"_postman_id": "5bc0c6f5-a153-4365-b04d-95a6eb2afb14",
+		"name": "Kafka Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3762674",
+		"_collection_link": "https://solar-satellite-510940.postman.co/workspace/Personal~bad26804-d58c-4f23-a813-487ac6a774ed/collection/3762674-5bc0c6f5-a153-4365-b04d-95a6eb2afb14?action=share&source=collection_link&creator=3762674"
+	},
+	"item": [
+		{
+			"name": "update-location",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:9001/update-location",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"update-location"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

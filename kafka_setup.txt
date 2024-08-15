@@ -1,0 +1,39 @@
+##Kafka Setup : windows
+Note : All the below steps are also mentioned on Apache Kafka Official Portal : https://kafka.apache.org/quickstart
+
+#1 : Download Apache Kafka https://www.apache.org/dyn/closer.cgi?path=/kafka/3.8.0/kafka_2.13-3.8.0.tgz
+#2 : Extract the zip file.
+#3 : As we know that Kafka need zookeeper to manage the state of Brokers. So first we need to start the zookeeper with it default properties.
+#4 : Open Command Prompt and go to the extract kafka folder and Run the below command to run the zookeeper.
+
+    $ bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+	
+#5 : Above command will start the zookeeper with default port : 2181
+#6 : Open the new command prompt.
+#7 : Now we have to start the Kafka with below command :
+     
+    $ bin\windows\kafka-server-start.bat config\server.properties
+
+#8 : Above command will start kafka with default port : 9092.
+
+##Play Kafka with Console
+Note : Make sure that your zookeeper and kafka is running in command prompt.
+#1 : Create a New topic with kafka-topics using below command.
+     
+	$ bin\windows\kafka-topics.bat --create --topic my-topic --bootstrap-server localhost:9092 
+	 
+#2 : Produce some messages with kafka-console-producer in the 'my-topic' using below command.
+	
+     $ bin\windows\kafka-console-producer.bat --topic my-topic --bootstrap-server localhost:9092
+	
+#3 : After executing the above command , you will get a console to send message. 	
+#4 : Open the new command prompt and execute the below command to subscribe topic 'my-topic' .
+
+     $ bin\windows\kafka-console-consumer.bat --topic my-topic --bootstrap-server localhost:9092
+
+#5 : After executing the above command leave the command prompt like that.
+#6 : Now you can go to that command prompt where you execute the command of producing messaging to kafka in step #2.
+#7 : Now you can send any message and enter then it will show you in the #4 command prompt.
+
+Note: Now I have appllied the same thing through spring boot microservics.  
+Scenario : we will create two microservices , one will be of deliveryBoy and second will be EndUser. Delivery Boy will update the location and end user will get it.
